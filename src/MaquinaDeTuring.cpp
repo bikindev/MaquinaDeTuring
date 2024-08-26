@@ -44,10 +44,8 @@ bool MaquinaDeTuring::simular() {
         bool encontrou_transicao = false;
         
         for (const Transicao& transicao : delta) { // Percorrer todas as funções de transição da máquina
-        cout << estado_atual << ": (" << transicao.estadoAtual << ", " << transicao.simboloAtual << ") -> (" << transicao.estadoDestino << ", " << transicao.simboloDestino << ", " << transicao.direcao << ") | Cabeça: "<< posicao_cabeca << " | Fita: " << fita << endl;
         
             if (transicao.estadoAtual == estado_atual && transicao.simboloAtual == fita[posicao_cabeca]) {
-                cout << "Encontrou transição." << endl;
                 estado_atual = transicao.estadoDestino;
                 fita[posicao_cabeca] = transicao.simboloDestino;
 
@@ -69,29 +67,12 @@ bool MaquinaDeTuring::simular() {
         if (!encontrou_transicao) {
             for (const string& estado_final : estados_finais) {
                 if (estado_atual == estado_final) {
-                    cout << "ENTROU 1 - aceita" << endl;
                     return true; // A palavra foi aceita
                 }
             }
-            cout << "ENTROU 1 - rejeita" << endl;
             return false; // A palavra foi rejeitada
         }
 
-/*
-        // Se encontrou a transição, verificar se chegou ao final da fita (se a cabeça está está sobre um símbolo branco)
-        if (fita[posicao_cabeca] == '_') { 
-            // Verificar se está em um estado final
-            for (const string& estado_final : estados_finais) {
-                if (estado_atual == estado_final) {
-                    cout << "ENTROU 2 - aceita" << endl;
-                    return true; // A palavra foi aceita
-                }
-            }
-            cout << "ENTROU 2 - rejeita" << endl;
-            return false; // A palavra foi rejeitada
-        }
-*/
-        
         // Se o número de iterações atingir o limite máximo definido, pode haver um possível loop inifito
         // Então a máquina para de computar
         cont++;
