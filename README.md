@@ -4,17 +4,13 @@ Sistemas de Informação - UFLA
 Implementado por: Patrícia Souza Couto, 202210524, Turma 14A
 
 Para compilar, use:
-...
-g++ -I -o MT main.cpp MaquinaDeTuring.cpp
-...
+`g++ -I -o MT main.cpp MaquinaDeTuring.cpp`
 
 Para executar, use:
-...
-./MT <arquivo_configuracao>.txt <palavra a ser testada> <arquivo_saida>.txt
-...
+`./MT <arquivo_configuracao>.txt <palavra a ser testada> <arquivo_saida>.txt`
 
 O arquivo de configuração da máquina deve seguir o padrão:
-...
+```
 q0 q1   // Conjunto de estados
 q0      // Estado inicial
 q1      // Conjunto de estados finais
@@ -26,4 +22,4 @@ q0 _ q1 _ D
 q1 a q1 a D
 q1 b q1 b D
 q1 _ q1 _ N
-...
+```
