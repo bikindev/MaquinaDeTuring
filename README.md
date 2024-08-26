@@ -3,11 +3,11 @@ Implementação de uma Máquina de Turing Universal para a disciplina de Teoria 
 Sistemas de Informação - UFLA
 Implementado por: Patrícia Souza Couto, 202210524, Turma 14A
 
-Para compilar, use:
-`g++ -I -o MT main.cpp MaquinaDeTuring.cpp`
+Para compilar, mantenha a mesma estrutura de diretórios deste repositório e use o makefile:
+```make```
 
 Para executar, use:
-`./MT <arquivo_configuracao>.txt <palavra a ser testada> <arquivo_saida>.txt`
+```./MT <arquivo_configuracao>.txt <palavra a ser testada> <arquivo_saida>.txt```
 
 O arquivo de configuração da máquina deve seguir o padrão:
 ```
