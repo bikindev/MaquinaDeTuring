@@ -104,7 +104,5 @@ int main(int argc, char* argv[]) {
 
     saida.close();
 
-    cout << "Fim" << endl;
-
     return 0;
 }
